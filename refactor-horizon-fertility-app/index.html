@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-P6BN2S9e/c125gi64d3tOD0A8cXv+Ce6a4830huIBc8=' 'sha256-LQdTYZ03u0RSdhuHT/xq5kKengUesm9ExayDxzYvx7E=' 'strict-dynamic'; script-src-attr 'none'; style-src 'unsafe-inline'; style-src-attr 'none'; img-src data:; connect-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b1626">
+<meta name="description" content="A private reproductive health timeline. Notice patterns, understand uncertainty and prepare for a conversation. No fertility score or diagnosis.">
+<title>Horizon | Perspective, Not a Fertility Score</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1626'/%3E%3Cpath d='M5 20h22M9 24h14M9 16a7 7 0 0 1 14 0' fill='none' stroke='%232dd4bf' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:dark;--bg:#0b1626;--paper:#101f32;--line:#293e54;--ink:#edf4fa;--muted:#a9bbcd;--teal:#2dd4bf}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui}h1,h2,h3,p{margin:0}button,input,select{font:inherit}a{color:var(--teal)}:focus-visible{outline:3px solid var(--teal);outline-offset:4px}[hidden]{display:none!important}.wrap{width:min(1160px,100% - 32px);margin:auto}.sr,.skip:not(:focus){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.skip:focus{position:fixed;z-index:9;background:var(--paper)}
+.row,.brand,.actions,.intro,.meter,.context{display:flex;align-items:center;gap:12px}.row,.intro,.context,.actions{flex-wrap:wrap;justify-content:space-between}.small,small,.sub,details p,.private{color:var(--muted);font-size:.875rem}.eyebrow{color:var(--teal);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.mast{border-bottom:1px solid var(--line)}.mast .row{min-height:82px}.brand{font-size:1.7rem;font-weight:700}.logo svg{width:30px;height:30px;fill:none;stroke:var(--teal);stroke-width:1.8}.tabs{display:flex;gap:23px;overflow:auto}.tabs button{min-height:56px;flex:none;background:none;border:0;color:var(--muted);padding:0;font-size:.9rem}.tabs [aria-selected=true]{color:var(--teal);border-bottom:2px solid}main{padding:30px 0}.intro{margin-bottom:24px}h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.14;letter-spacing:-.05em;margin:9px 0 11px}h2{font-size:1.13rem}h3{font-size:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #627b94;border-radius:8px;padding:8px 14px;background:none;color:var(--ink);font-size:.875rem;text-decoration:none;cursor:pointer}.btn:hover{background:#172b40}.primary{background:var(--teal);color:#062521}.danger,.error{color:#ffb6ba}button:disabled{opacity:.6}.layout,.split,.stack,.fields{display:grid;gap:18px}.stack{align-content:start}.card{min-width:0;padding:21px;border:1px solid var(--line);border-radius:13px;background:var(--paper);box-shadow:0 10px 26px #020b1626}.flow>*+*{margin-top:12px}.section,footer{margin-top:28px}.context{padding-bottom:20px;font-size:.82rem}.context a,.resource{display:inline-flex;align-items:center;min-height:44px}.rule,details+details{border-top:1px solid var(--line)}.direction{font-size:1.65rem;margin:18px 0 3px}summary{min-height:44px;padding:9px 0;cursor:pointer}details p{margin-bottom:12px}
+.plot{margin:18px 0 9px}.plot-body{display:grid;grid-template:180px auto/24px minmax(0,1fr);gap:8px}.scale{display:flex;flex-direction:column;justify-content:space-between;text-align:right;margin-block:-8px}.scale,.dates,.chart-note,.ends{font-size:.75rem;color:var(--muted)}.plot svg{width:100%;height:100%;overflow:visible}.dates{grid-column:2}.dates,.ends{display:flex;justify-content:space-between}.guide{stroke:var(--line);stroke-dasharray:3 5}.trace,.dots{fill:none;stroke:var(--teal);stroke-width:2.7;vector-effect:non-scaling-stroke}.dots{stroke-width:7;stroke-linecap:round}#area{fill:url(#wash)}#wash stop{stop-color:var(--teal)}.scenario{background:var(--bg);border-radius:8px;padding:12px;margin-top:13px}.scenario input{width:100%;height:44px;margin:0;display:block}input,progress{accent-color:var(--teal)}
+.ring{position:relative;width:90px;height:90px;flex:none;display:grid;place-items:center;text-align:center}.ring svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--line);stroke-width:7;transform:rotate(-90deg)}#arc{stroke:var(--teal);stroke-linecap:round}.ring b{display:block;font-size:1.4rem}.ring small{font-size:.7rem}.meter{margin:16px 0}.meter p{font-size:.8rem;color:var(--muted)}.tracker{list-style:none;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:13px 4px}.tracker li{text-align:center;font-size:.7rem;color:var(--muted)}.tracker span{display:grid;place-items:center;width:29px;height:29px;margin:4px auto;border:1px solid #627b94;border-radius:50%}.done span{background:#113c3d;color:var(--teal)}.today span{outline:2px solid}.table-wrap{overflow:auto}table{width:100%;text-align:left;font-size:.85rem}.facts{display:grid;grid-template-columns:1fr 1.5fr;gap:8px;font-size:.875rem}.facts dd{margin:0;overflow-wrap:anywhere}
+.switch{display:flex;gap:12px;min-height:54px;padding:8px 0;cursor:pointer}.switch input{flex:none;width:22px;height:22px}.switch small{display:block}.field{display:grid;gap:5px;font-size:.875rem}.field input,.field select{width:100%;min-width:0;min-height:44px;padding:7px;background:var(--bg);color:var(--ink);border:1px solid #627b94;border-radius:7px}fieldset{min-width:0;border:0;padding:0;margin:0}.notice,.tour{border-left:2px solid var(--teal);background:var(--paper);padding:14px;font-size:.875rem}.tour{position:sticky;top:8px;z-index:3;border:1px solid var(--teal)}.tour-focus{outline:2px solid var(--teal);outline-offset:4px}progress{width:100%;height:8px}.cohort label{display:block;margin:12px 0}dialog{width:min(570px,100% - 24px);max-height:calc(100% - 24px);padding:22px;background:var(--paper);color:var(--ink);border:1px solid #627b94;border-radius:13px}dialog::backdrop{background:#040c18cc}footer{font-size:.75rem;color:var(--muted)}
+@media(min-width:600px){.split,.fields{grid-template-columns:1fr 1fr}}@media(min-width:900px){.layout{grid-template-columns:minmax(0,1fr) 335px}}@media(max-width:379px){.card{padding:16px}.tabs{gap:18px}.tabs button{font-size:.82rem}.private{font-size:.72rem}.facts{grid-template-columns:1fr}}@media(forced-colors:active){.card,.btn,.notice{border:1px solid CanvasText}.trace,.dots,#arc{stroke:CanvasText}.done span{border:3px solid CanvasText}}
+@media(prefers-reduced-motion:no-preference){.intro{animation:arrive .26s ease-out}.tilt{transition:transform .18s}.btn{transition:transform .15s}.btn:active{transform:translateY(1px)}@keyframes arrive{from{opacity:0;transform:translateY(5px)}}}@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.tilt:hover{transform:perspective(1000px) rotateX(.35deg) rotateY(-.4deg) translateY(-2px)}}
+@media print{:root{color-scheme:light;--bg:white;--paper:white;--ink:#111;--muted:#333;--line:#bbb;--teal:#155d56}body{font:11pt/1.35 system-ui}.mast,.notprint,footer,dialog,#overview,#daily,#privacy,#tour,#tests{display:none!important}.wrap{width:100%}main{padding:0}#clinician[hidden]{display:block!important}h1{font-size:22pt}.card{border:0;box-shadow:none;padding:0}.facts{font-size:10pt;gap:5px 12px}.print-note{display:block!important}@page{margin:15mm}}
+</style>
+<script type="text/horizon">
+/** Private single-file application. */
+(function Horizon(){
+'use strict';
+// MODEL CONSTANTS AND SHARED VALIDATION
+const C={ageMin:18,ageMax:50,cycleMax:365,months:12,days:14,logs:366,points:3,shift:2,cap:.8,debounce:120,step:5000,timeout:2200,bytes:45000,dayMs:86400000,version:2};
+const AGE={earlier:35,immediate:41,sperm:40,usualWait:12,earlyWait:6};
+const WEIGHTS={age:2,context:1,goal:1,tried:1,pattern:1,history:1,tobacco:1,observations:2};
+const KEY='horizon.private.v2',MESSAGE="Hi, could we find a time to catch up? I'd appreciate your support.";
+/** Find an element. */
+function $(id){return document.getElementById(id);}
+/** Select elements. */
+function all(s){return [...document.querySelectorAll(s)];}
+/** Write safe text only when changed. */
+function put(id,v){const e=$(id),s=String(v);if(e.textContent!==s)e.textContent=s;}
+/** Create a text-only element. */
+function make(tag,v=''){const e=document.createElement(tag);e.textContent=v;return e;}
+/** Bind a local event. */
+function on(id,event,fn){$(id).addEventListener(event,fn);}
+/** Validate finite optional numbers and clamp boundaries. */
+function clamp(v,min,max,whole=false){if(v==null||!['number','string'].includes(typeof v)||String(v).trim()==='')return null;const n=Number(v);return Number.isFinite(n)?Math.min(max,Math.max(min,whole?Math.round(n):n)):null;}
+/** Recognize JSON records. */
+function record(v){return v!==null&&typeof v==='object'&&!Array.isArray(v);}
+/** Format the local calendar day. */
+function today(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+/** Add calendar days safely across DST. */
+function dayAt(n,base=today()){return new Date(Date.parse(base+'T12:00:00Z')+n*C.dayMs).toISOString().slice(0,10);}
+/** Create a monthly key. */
+function monthAt(n){const d=new Date(),m=new Date(d.getFullYear(),d.getMonth()+n,1);return `${m.getFullYear()}-${String(m.getMonth()+1).padStart(2,'0')}`;}
+const MONTHS=Array.from({length:C.months},(_,i)=>monthAt(i+1-C.months));
+const formatter=new Intl.DateTimeFormat('en',{month:'short',year:'numeric',timeZone:'UTC'});
+/** Describe a month. */
+function monthName(m){return formatter.format(new Date(m+'-01T12:00:00Z'));}
+const F={age:['Age (18-50)',C.ageMin,C.ageMax],context:['Reproductive context',{eggs:'Egg / ovarian',sperm:'Sperm / testicular'}],goal:['Your plans',{trying:'Trying for pregnancy',planning:'Thinking ahead',other:'Exploring options'}],tried:['Months trying (0-120)',0,120],pattern:['Period pattern, if relevant',{regular:'Usually regular',irregular:'Irregular',absent:'Often absent',na:'Does not apply'}],history:['Known reproductive concern?',{yes:'Yes',no:'No'}],tobacco:['Current tobacco use?',{yes:'Yes',no:'No'}],month:['Check-in month',Object.fromEntries(MONTHS.map(m=>[m,monthName(m)]))],low:['Shortest of last 3 cycles (1-365 days)',1,C.cycleMax],high:['Longest of last 3 cycles (1-365 days)',1,C.cycleMax],date:['Day',Object.fromEntries(Array.from({length:C.days},(_,i)=>[dayAt(-i),i?dayAt(-i):'Today / '+today()]))],sleep:['Sleep hours (0-24), optional',0,24,.5],feeling:['How did the day feel?',{okay:'Okay',mixed:'Mixed',hard:'A hard day'}]};
+const GROUPS={profile:['age','context','goal','tried','pattern','history','tobacco'],timeline:['month','low','high'],logs:['date','sleep','feeling']};
+const PERMS={profile:['Use my planning answers','Age, context, plans, history and tobacco.'],timeline:['Use my cycle check-ins','Monthly cycle ranges, only if relevant.'],logs:['Use my daily logs','Sleep and wellbeing, for reflection only.'],save:['Save on this device','Optional, unencrypted. Avoid shared devices.'],clinician:['Show my clinician summary','Local display or print; never automatic sharing.'],buddy:['Enable trusted-person support','A neutral WhatsApp message, opened and sent by you.'],ai:['Allow on-device AI wording','Only installed models; reviewed phrases only.']};
+const TREND={more:['More variable','Cycle timing varied more at the latest check-in.'],less:['Less variable','Cycle timing varied less at the latest check-in.'],steady:['No clear change','The recorded cycle variation is similar.'],unknown:['A little more context needed','Three comparable cycle check-ins are needed.']};
+/** Whitelist every form or saved record. */
+function clean(group,raw){
+ if(!record(raw))return group==='profile'?{}:null;const p={};
+ for(const k of GROUPS[group]){const [,type,max,step]=F[k],v=raw[k];p[k]=typeof type==='number'?clamp(v,type,max,step!==.5):typeof v==='string'&&Object.hasOwn(type,v)?v:null;}
+ if(group==='profile'){if(p.goal!=='trying')p.tried=null;return p;}
+ if(group==='timeline')return p.month&&p.low!=null&&p.high!=null?{month:p.month,low:Math.min(p.low,p.high),high:Math.max(p.low,p.high)}:null;
+ const date=raw.date,stamp=typeof date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(date)?Date.parse(date+'T12:00:00Z'):NaN;
+ return Number.isFinite(stamp)&&new Date(stamp).toISOString().slice(0,10)===date&&date<=today()&&date>=dayAt(1-C.logs)&&(p.sleep!=null||p.feeling)?{date,sleep:p.sleep,feeling:p.feeling}:null;
+}
+/** Deduplicate and bound saved observations. */
+function cleanList(group,raw){const key=group==='logs'?'date':'month',max=group==='logs'?C.logs:C.months,map=new Map();if(Array.isArray(raw))for(const r of raw.slice(-max)){const p=clean(group,r);if(p)map.set(p[key],p);}return [...map.values()].sort((a,b)=>a[key].localeCompare(b[key]));}
+
+// MODEL: guideline timing categories, never a fertility score.
+/** Monotone discussion steps, not biological fertility curves. */
+function ageCurve(age,sex){const n=clamp(age,C.ageMin,C.ageMax);return n==null?0:sex==='eggs'?Number(n>=AGE.earlier)+Number(n>=AGE.immediate):sex==='sperm'?Number(n>=AGE.sperm):0;}
+/** Apply egg-age guidance only in the appropriate context. */
+function wait(p,n){if(p.age==null||p.context!=='eggs')return null;const age=p.age+n/C.months;return age>=AGE.immediate?0:age>=AGE.earlier?AGE.earlyWait:AGE.usualWait;}
+/** Internal ordinal timing index; not shown as a numeric health result. */
+function timingIndex(p,offset=0){const n=clamp(offset,0,C.months,true)??0,w=wait(p,n),early=p.history==='yes'||['irregular','absent'].includes(p.pattern),due=p.goal==='trying'&&w!=null&&(w===0||p.tried!=null&&p.tried+n>=w);return Math.max(ageCurve(p.age,p.context),ageCurve(p.age==null?null:p.age+n/C.months,p.context),early||due?2:0);}
+/** Translate timing into a non-directive next step. */
+function cue(p,n=0){if(p.history==='yes'||['irregular','absent'].includes(p.pattern))return ['A conversation sooner could help','Known concerns or irregular periods are reasons to ask without waiting.'];const w=wait(p,n);return p.goal==='trying'&&w!=null&&timingIndex(p,n)>=2?['Consider asking about an evaluation','You may be at a usual review point. Ask what applies to you.']:['Explore your options',w!=null?`A usual review point is ${w} months trying without pregnancy. Ask sooner if concerned.`:'Consider a planning visit. Partner history and your goals can change timing.'];}
+/** Separate input coverage from observed direction and missing-data limits. */
+function assess(p,entries){
+ const applicable=p.context!=='sperm'&&p.pattern!=='na',points=applicable?entries.map(e=>({month:e.month,days:e.high-e.low})):[],enough=points.length>=C.points,delta=enough?points.at(-1).days-points[0].days:0;
+ const known={...p,tried:!!p.goal&&(p.goal!=='trying'||p.tried!=null),observations:enough};let sum=0,total=0;
+ for(const [k,w]of Object.entries(WEIGHTS)){if(!applicable&&['pattern','observations'].includes(k))continue;total+=w;if(known[k]!=null&&known[k]!==false&&known[k]!=='')sum+=w;}
+ return {points,applicable,direction:!enough?'unknown':delta>=C.shift?'more':delta<=-C.shift?'less':'steady',percent:Math.round(sum/total*100),limited:sum/total<C.cap||p.age==null||!p.context||!p.goal||applicable&&!enough};
+}
+/** Count consecutive reflection days through today or yesterday. */
+function streak(logs,base=today()){const days=new Set(logs.map(r=>r.date));let d=days.has(base)?base:dayAt(-1,base),n=0;while(days.has(d)){n++;d=dayAt(-1,d);}return n;}
+
+// STATE AND OPTIONAL STORAGE
+/** Start with no data and all grants off. */
+function fresh(){return {profile:{},entries:[],logs:[],plan:false,consent:Object.fromEntries(Object.keys(PERMS).map(k=>[k,false]))};}
+/** Parse safely, then sanitize and discard unconsented data. */
+function decode(raw){try{if(typeof raw!=='string'||raw.length>C.bytes)return null;const v=JSON.parse(raw);if(!record(v)||v.version!==C.version||!record(v.consent)||v.consent.save!==true)return null;const s=fresh();for(const k of ['profile','timeline','logs','save'])s.consent[k]=v.consent[k]===true;if(s.consent.profile)s.profile=clean('profile',v.profile);if(s.consent.timeline)s.entries=cleanList('timeline',v.entries);if(s.consent.logs)s.logs=cleanList('logs',v.logs);s.plan=v.plan===true;return s;}catch{return null;}}
+/** Handle unavailable browser storage. */
+function storage(){try{return window.localStorage;}catch{return null;}}
+/** Remove only Horizon's key. */
+function removeSaved(store){try{if(!store)return false;store.removeItem(KEY);return true;}catch{return false;}}
+const store=storage();let storageNote='';
+/** Restore a prior opt-in save; corrupt data starts empty. */
+function restore(){try{const raw=store?.getItem(KEY);if(raw==null)return null;const s=decode(raw);if(s)return s;removeSaved(store);storageNote='Saved data unreadable. A clean session was started.';return fresh();}catch{storageNote='Device storage unavailable. Session only.';return null;}}
+const restored=restore();let state=restored||fresh();
+const ui={example:!restored,tab:0,offset:0,frame:0,pending:0,demo:null,timer:0,ai:null,plot:''};
+/** Persist allowed datasets only; failures never break the app. */
+function persist(){if(!state.consent.save){removeSaved(store);return;}try{if(!store)throw 0;const c=state.consent;store.setItem(KEY,JSON.stringify({version:C.version,consent:c,profile:c.profile?state.profile:{},entries:c.timeline?state.entries:[],logs:c.logs?state.logs:[],plan:state.plan}));storageNote='Saved here. Sharing and AI grants reset after reload.';}catch{state.consent.save=false;removeSaved(store);storageNote='Saving blocked. Session only. Clear site data to remove older saves.';}}
+/** Erase an injectable session and saved key. */
+function wipe(target,adapter){Object.assign(target,fresh());return removeSaved(adapter);}
+const SAMPLE={profile:{age:34,context:'eggs',goal:'trying',tried:4,pattern:'irregular',history:null,tobacco:'no'},entries:[3,4,4,6,8,8].map((d,i)=>({month:MONTHS.at(i-6),low:26,high:26+d})),logs:[-13,-12,-10,-9,-8,-5,-4,-2,-1,0].map(n=>({date:dayAt(n),sleep:7,feeling:'okay'}))};
+/** Never mix fictional records with the real session. */
+function source(){return ui.example||ui.demo?SAMPLE:state;}
+
+// VIEW: batch writes; no layout measurement or resize listeners.
+/** Schedule one render per frame. */
+function queue(save=false){if(save)persist();if(!ui.frame)ui.frame=requestAnimationFrame(render);}
+/** Generate labelled controls from shared schemas. */
+function build(){
+ for(const [group,keys]of Object.entries(GROUPS))for(const k of keys){const [title,type,max,step]=F[k],label=make('label',title),input=make(typeof type==='number'?'input':'select');label.className='field';input.id=k;if(typeof type==='number')Object.assign(input,{type:'number',min:type,max,step:step||1,inputMode:step?'decimal':'numeric'});else{input.add(new Option('Skip / not sure',''));for(const [v,t]of Object.entries(type))input.add(new Option(t,v));}label.append(input);$(group+'-fields').append(label);}
+ for(const host of all('[data-permissions]'))for(const k of host.dataset.permissions.split(' ')){const label=make('label'),input=make('input'),copy=make('span');label.className='switch';input.type='checkbox';input.dataset.consent=k;input.setAttribute('role','switch');copy.append(make('strong',PERMS[k][0]),make('small',PERMS[k][1]));label.append(input,copy);host.append(label);input.addEventListener('change',()=>grant(k,input.checked));}
+ $('date').value=today();$('month').value=MONTHS.at(-1);$('support').href='https://wa.me/?text='+encodeURIComponent(MESSAGE);
+}
+/** Synchronize grant switches and gate sensitive interactions. */
+function controls(){for(const e of all('[data-consent]')){e.checked=state.consent[e.dataset.consent];e.disabled=!!ui.demo;}for(const k of Object.keys(GROUPS))$(k+'-fields').disabled=!state.consent[k]||!!ui.demo;$('save-check').disabled=!!ui.demo||!state.consent.profile&&!state.consent.timeline;$('save-log').disabled=!!ui.demo||!state.consent.logs;$('support').hidden=!state.consent.buddy||!!ui.demo;$('support-hint').hidden=state.consent.buddy&&!ui.demo;$('edit').disabled=!!ui.demo;$('print').disabled=!!ui.demo||!ui.example&&!state.consent.clinician;}
+/** Clear private drafts and errors. */
+function resetForms(){for(const f of all('form'))f.reset();$('date').value=today();$('month').value=MONTHS.at(-1);put('form-error','');put('log-error','');}
+/** Revoke data and its persisted copy, not just its display. */
+function grant(k,value){if(ui.demo)return;state.consent[k]=value;if(!value){if(k==='profile')state.profile={};if(k==='timeline')state.entries=[];if(k==='logs')state.logs=[];if(k in GROUPS){state.plan=false;resetForms();cancelAI();}if(k==='ai')cancelAI();if(k==='save')storageNote=removeSaved(store)?'Device save removed. Current entries remain in this tab.':'Storage unavailable. Clear browser site data.';}queue(k!=='save'||value);put('live',k==='save'&&!state.consent.save?storageNote:value?'Permission enabled.':'Permission revoked. Related data and output cleared.');}
+/** Populate text cells, including an explicit empty state. */
+function table(rows){$('chart-rows').replaceChildren(...(rows.length?rows:[['No observations yet','Not assessed']]).map(values=>{const tr=make('tr');tr.append(...values.map(v=>make('td',v)));return tr;}));}
+/** Draw measured history with equivalent text and tabular data. */
+function draw(m){
+ const key=JSON.stringify(m.points);if(key===ui.plot)return;ui.plot=key;
+ const w=480,h=120,ticks=3,step=Math.ceil(Math.max(12,...m.points.map(p=>p.days))/ticks),start=m.points[0]?.month||MONTHS.at(-6),dates=MONTHS.slice(Math.min(MONTHS.indexOf(start),C.months-6));
+ const points=m.points.map(p=>[dates.indexOf(p.month)*w/(dates.length-1),h-p.days*h/(step*ticks)]),line=points.map((p,i)=>`${i?'L':'M'}${p}`).join(' ');
+ $('trace').setAttribute('d',line);$('dots').setAttribute('d',points.map(p=>`M${p}h.01`).join(' '));$('area').setAttribute('d',points.length>1?`${line}L${points.at(-1)[0]},${h}L${points[0][0]},${h}Z`:'');
+ $('scale').replaceChildren(...Array.from({length:ticks+1},(_,i)=>make('span',(ticks-i)*step)));put('first-month',monthName(dates[0]));put('last-month',monthName(dates.at(-1)));
+ put('chart-description',m.points.map(p=>`${monthName(p.month)}: ${p.days} days`).join('; ')||'No applicable observations.');table(m.points.map(p=>[monthName(p.month),p.days+' days']));
+}
+/** Update future timing without projecting cycle data. */
+function scenario(){ui.offset=clamp($('whatif').value,0,C.months,true)??0;put('offset',ui.offset?'+'+ui.offset+' months':'Now');$('whatif').setAttribute('aria-valuetext',ui.offset+' months from now');put('scenario-copy',(ui.offset?'In '+ui.offset+' months: ':'Now: ')+cue(source().profile,ui.offset).join('. '));}
+/** Show the fourteen-day engagement tracker. */
+function tracker(logs){const dates=new Set(logs.map(r=>r.date));$('tracker').replaceChildren(...Array.from({length:C.days},(_,i)=>{const date=dayAt(i+1-C.days),done=dates.has(date),li=make('li'),dot=make('span',date.slice(-2));li.className=(done?'done ':'')+(date===today()?'today':'');li.setAttribute('aria-label',date+': '+(done?'logged':'not logged'));dot.setAttribute('aria-hidden','true');li.append(dot,document.createTextNode(done?'Logged':'Open'));return li;}));const n=streak(logs);put('streak',n+' day'+(n===1?'':'s')+' together');}
+/** Render a consent-gated, local clinical summary. */
+function clinical(data,m){
+ const allowed=ui.example||!!ui.demo||state.consent.clinician;$('clinical-body').hidden=!allowed;$('clinical-locked').hidden=allowed;const rows=[];
+ if(allowed){rows.push(['Source',ui.example||ui.demo?'Synthetic example':'Guest self-report'],['Date',today()]);for(const k of GROUPS.profile){const [label,type]=F[k];rows.push([label,typeof type==='number'?(data.profile[k]??'Not given'):(type[data.profile[k]]||'Not given')]);}rows.push(['Variation',m.points.map(p=>monthName(p.month)+': '+p.days+' days').join('; ')||'Not assessed'],['Context',m.percent+'% coverage; '+(m.limited?'limited':'not clinical confidence')],['Discussion',cue(data.profile).join('. ')],['Action',state.plan&&!ui.example&&!ui.demo?'Intention noted; no visit verified':'No verified clinical action']);}
+ $('clinical-facts').replaceChildren(...rows.flatMap(([k,v])=>[make('dt',k),make('dd',v)]));
+}
+/** Commit one frame of view changes. */
+function render(){
+ ui.frame=0;const data=source(),p=data.profile,m=assess(p,data.entries),sample=ui.example||!!ui.demo;
+ const copy={'session-label':sample?'Example / synthetic data':state.consent.save?'Private / device saved':'Private / this tab only','source-label':sample?'Fictional observations.':'Your observations.','direction':m.applicable?TREND[m.direction][0]:'Cycle data may not apply','trend-copy':m.applicable?TREND[m.direction][1]:'Planning answers can still guide a conversation.','coverage':m.percent+'%','confidence':m.limited?'Limited context':'More context','next-cue':cue(p)[0],'referral':cue(p)[1],'daily-source':sample?'Synthetic reflections. Your own logs start separately.':'Wellbeing reflections, never fertility inputs.','plan-status':state.plan&&!sample?'Intention noted; no visit verified.':'','plan':state.plan?'Clear intention':'Note my intention to ask','storage-note':storageNote,'example':ui.example?'Return to my session':'Explore the example','habits':p.tobacco==='yes'?'Explore tobacco support if you want it.':'Discuss medicines and preconception care if relevant.','testing':p.context==='sperm'?'Ask about semen analysis in a broader assessment.':'Ask if cycle assessment or selected tests would help. AMH alone cannot predict natural conception.'};
+ for(const [id,v]of Object.entries(copy))put(id,v);$('arc').setAttribute('stroke-dasharray',m.percent+' 100');$('arc').toggleAttribute('hidden',m.percent===0);$('plan').disabled=sample;
+ draw(m);scenario();tracker(data.logs);clinical(data,m);controls();
+}
+
+// INPUT ACTIONS
+/** Read a group without interpreting it. */
+function read(group){return Object.fromEntries(GROUPS[group].map(k=>[k,$(k).value]));}
+/** Load only the guest's monthly record. */
+function loadEntry(){const r=state.entries.find(e=>e.month===$('month').value);$('low').value=r?.low??'';$('high').value=r?.high??'';}
+/** Open the guest editor, never copying sample records. */
+function edit(){for(const k of GROUPS.profile)$(k).value=state.profile[k]??'';$('month').value=MONTHS.at(-1);loadEntry();controls();$('editor').showModal();$('editor-title').focus();}
+/** Validate then atomically save a consented check-in. */
+function saveCheck(event){
+ event.preventDefault();if(ui.demo||!state.consent.profile&&!state.consent.timeline)return;
+ const bad=all('#check-form input').find(e=>!e.disabled&&e.validity.badInput);if(bad){put('form-error','Use a number or leave blank.');bad.focus();return;}
+ let entries=state.entries,p=state.profile;if(state.consent.profile)p=clean('profile',read('profile'));
+ if(state.consent.timeline){const raw=read('timeline');if(!MONTHS.includes(raw.month)||(raw.low==='')!==(raw.high==='')){put('form-error','Choose a month and enter both lengths, or leave both blank.');return;}entries=entries.filter(e=>e.month!==raw.month);if(raw.low!==''){const r=clean('timeline',raw);if(!r){put('form-error','Enter numeric cycle lengths.');return;}entries.push(r);}entries.sort((a,b)=>a.month.localeCompare(b.month));}
+ Object.assign(state,{profile:p,entries,plan:false});ui.example=false;cancelAI();$('editor').close();queue(true);put('live','Check-in updated. Numbers kept within stated limits. No fertility score calculated.');
+}
+/** Load the guest's reflection for a selected date. */
+function loadLog(){const r=state.logs.find(e=>e.date===$('date').value);$('sleep').value=r?.sleep??'';$('feeling').value=r?.feeling??'';}
+/** Save wellbeing without using it as a fertility predictor. */
+function saveLog(event){event.preventDefault();if(!state.consent.logs||ui.demo)return;const raw=read('logs'),r=clean('logs',raw);if(!Object.hasOwn(F.date[1],raw.date)||$('sleep').validity.badInput||!r){put('log-error','Choose a recent day and add sleep or how it felt.');return;}state.logs=cleanList('logs',[...state.logs.filter(e=>e.date!==r.date),r]);ui.example=false;put('log-error','');put('log-feedback','Logged. No need for a perfect streak.');queue(true);put('live','Daily reflection saved.');}
+/** Apply accessible tab navigation. */
+function navigate(index,focus=false){ui.tab=Math.min(3,Math.max(0,index));all('[role=tab]').forEach((tab,i)=>{const active=i===ui.tab;tab.tabIndex=active?0:-1;tab.setAttribute('aria-selected',String(active));$(tab.getAttribute('aria-controls')).hidden=!active;if(active&&focus)tab.focus();});}
+/** Remove stale derived explanations and abort inference. */
+function cancelAI(){ui.ai?.abort();ui.ai=null;put('explanation','Explore what changed and what remains uncertain.');put('ai-mode','Reviewed fallback available.');}
+/** Use a safe fallback; local AI can select only reviewed wording. */
+async function explain(){
+ cancelAI();const d=source(),m=assess(d.profile,d.entries),a=m.applicable?TREND[m.direction][1]:'Cycle data may not apply.',b='A steadier line cannot rule out a fertility concern.';
+ put('explanation',a+' '+b);put('ai-mode','Reviewed rule-based explanation');const api=globalThis.LanguageModel;if(!state.consent.ai||!api)return;
+ const task=new AbortController();ui.ai=task;const timer=setTimeout(()=>task.abort(),C.timeout);let session;
+ try{if(await api.availability()!=='available'||task.signal.aborted)return;session=await api.create({signal:task.signal});if(task.signal.aborted)return;const result=(await session.prompt(`Choose A or B only. A: ${a} B: ${b}`,{signal:task.signal})).trim();if(ui.ai===task&&!task.signal.aborted&&['A','B'].includes(result)){put('explanation',(result==='A'?a:b)+' This does not predict pregnancy.');put('ai-mode','Reviewed wording selected by local AI');}}catch{/* Keep the reviewed fallback. */}finally{clearTimeout(timer);try{session?.destroy?.();}catch{}if(ui.ai===task)ui.ai=null;}
+}
+/** Erase session, device save, drafts, grants, derived output and timers. */
+function erase(){stopDemo(false);clearTimeout(ui.pending);cancelAI();if(ui.frame)cancelAnimationFrame(ui.frame);ui.frame=0;const removed=wipe(state,store);Object.assign(ui,{example:false,offset:0,plot:''});$('whatif').value=0;resetForms();put('log-feedback','');$('erase-dialog').close();$('editor').close();storageNote=removed?'Horizon data and grants removed.':'Session cleared. Clear browser site data to remove an older save.';render();navigate(0,true);put('live',storageNote);}
+
+// DEMO: six five-second steps, isolated from real records and grants.
+const STEPS=[[0,'trend-card','Read a direction, not a score. These observations are fictional.'],[0,'scenario-box','Explore 12 months of timing. The observed line never becomes a prediction.'],[0,'coverage-card','Input coverage is not fertility or medical confidence.'],[1,'daily-card','A reflection supports a routine, not a health score. Missing a day is okay.'],[2,'clinical-card','A synthetic one-page summary. Nothing is sent automatically.'],[3,'permissions-card','Your data and permissions stay untouched. Saving and support are optional.']];
+/** Begin an isolated tour, preserving the current view. */
+function startDemo(){if(ui.demo)return;cancelAI();ui.demo={step:0,paused:false,left:C.step,prior:{tab:ui.tab,offset:ui.offset,example:ui.example}};$('tour').hidden=false;showStep();}
+/** Present a caption and schedule the next step. */
+function showStep(){const d=ui.demo;if(!d)return;for(const e of all('.tour-focus'))e.classList.remove('tour-focus');const [tab,id,caption]=STEPS[d.step];$('whatif').value=d.step===1?C.months:0;navigate(tab);render();$(id).classList.add('tour-focus');put('tour-step',`30-second tour / ${d.step+1} of ${STEPS.length}`);put('tour-caption',caption);$(id).scrollIntoView({block:'nearest',behavior:'instant'});d.started=performance.now();ui.timer=setTimeout(nextStep,d.left);}
+/** Advance or finish the tour. */
+function nextStep(){if(!ui.demo)return;if(++ui.demo.step===STEPS.length)stopDemo();else{ui.demo.left=C.step;showStep();}}
+/** Pause or resume without losing remaining time. */
+function pauseDemo(){const d=ui.demo;if(!d)return;d.paused=!d.paused;if(d.paused){clearTimeout(ui.timer);d.left=Math.max(0,d.left-(performance.now()-d.started));}else{d.started=performance.now();ui.timer=setTimeout(nextStep,d.left);}put('tour-pause',d.paused?'Resume':'Pause');}
+/** Clear tour effects and optionally restore the prior view. */
+function stopDemo(restoreView=true){clearTimeout(ui.timer);const prior=ui.demo?.prior;ui.demo=null;$('tour').hidden=true;put('tour-pause','Pause');for(const e of all('.tour-focus'))e.classList.remove('tour-focus');if(prior){if(restoreView){Object.assign(ui,prior);$('whatif').value=prior.offset;navigate(prior.tab);}queue();put('live','Tour finished. Your data and grants were not changed.');}}
+
+// SELF-TESTS: synthetic fixtures and injected storage only.
+/** Run invariants and show pass/fail in the page and console. */
+function runTests(){
+ const results=[],p={...SAMPLE.profile,pattern:'regular',history:'no'},ages=Array.from({length:C.ageMax-C.ageMin+1},(_,i)=>i+C.ageMin);
+ /** Isolate assertion failures. */
+ function check(test,fn){try{results.push({test,pass:!!fn()});}catch{results.push({test,pass:false});}}
+ for(const sex of ['eggs','sperm']){check('Monotone age curve / '+sex,()=>ages.slice(1).every(a=>ageCurve(a,sex)>=ageCurve(a-1,sex)));check('What-if never lowers index / '+sex,()=>ages.every(age=>Array.from({length:C.months+1},(_,n)=>n).every(n=>timingIndex({...p,age,context:sex},n)>=timingIndex({...p,age,context:sex}))));}
+ check('Age boundaries 18 and 50',()=>clamp(18,18,50)===18&&clamp(50,18,50)===50&&ageCurve(18,'eggs')===0&&ageCurve(50,'eggs')===2);
+ check('Missing-data confidence cap',()=>!assess(p,SAMPLE.entries).limited&&assess({...p,age:null},SAMPLE.entries).percent===80&&assess({...p,age:null},SAMPLE.entries).limited&&assess(p,[]).limited);
+ check('Streak across gaps',()=>streak([{date:dayAt(-3)},{date:today()}])===1&&streak([{date:dayAt(-2)},{date:dayAt(-1)}])===2&&streak([])===0);
+ check('Corrupt storage fallback',()=>decode('{bad')===null&&decode('null')===null);
+ check('Input clamping',()=>clamp(-1,18,50)===18&&clamp(90,18,50)===50&&clamp({},0,24)===null&&clamp('NaN',0,24)===null);
+ check('Erase clears everything',()=>{const map=new Map([[KEY,'x']]),s={...fresh(),...SAMPLE,plan:true,consent:Object.fromEntries(Object.keys(PERMS).map(k=>[k,true]))};return wipe(s,{removeItem:k=>map.delete(k)})&&!map.size&&!s.entries.length&&!s.logs.length&&!Object.keys(s.profile).length&&!s.plan&&Object.values(s.consent).every(v=>!v);});
+ check('Consent filters saved fields',()=>{const s=decode(JSON.stringify({version:C.version,consent:{save:true},profile:p}));return s&&!Object.keys(s.profile).length&&!s.consent.clinician;});
+ check('Neutral support payload',()=>new URL($('support').href).searchParams.get('text')===MESSAGE&&!/health|fertility|cycle|horizon|pregnan/i.test(MESSAGE));
+ const bytes=performance.getEntriesByType('navigation')[0]?.decodedBodySize;if(bytes)check('File size / '+bytes,()=>bytes<C.bytes);
+ console.table(results);$('test-results').replaceChildren(...results.map(r=>make('li',(r.pass?'PASS':'FAIL')+' / '+r.test)));put('test-summary',results.filter(r=>r.pass).length+' / '+results.length+' passed');$('tests').hidden=false;return results;
+}
+
+// INITIALIZATION
+/** Wire local actions, keyboard tabs and lifecycle cleanup. */
+function init(){
+ build();all('[role=tab]').forEach((tab,i)=>{tab.addEventListener('click',()=>{stopDemo(false);navigate(i);});tab.addEventListener('keydown',e=>{const keys={ArrowRight:(i+1)%4,ArrowLeft:(i+3)%4,Home:0,End:3};if(Object.hasOwn(keys,e.key)){e.preventDefault();stopDemo(false);navigate(keys[e.key],true);}});});
+ const clicks={edit,'editor-close':()=>$('editor').close(),explain,'tour-start':startDemo,'tour-pause':pauseDemo,'tour-stop':()=>stopDemo(),print:()=>window.print(),'erase-open':()=>$('erase-dialog').showModal(),'erase-cancel':()=>$('erase-dialog').close(),'erase-confirm':erase,'evidence-link':()=>{$('evidence').open=true;},plan:()=>{if(!ui.example&&!ui.demo){state.plan=!state.plan;queue(true);}},'log-today':()=>{stopDemo(false);navigate(1,true);$('date').value=today();loadLog();},example:()=>{stopDemo(false);ui.example=!ui.example;cancelAI();queue();navigate(0,true);}};
+ for(const [id,fn]of Object.entries(clicks))on(id,'click',fn);
+ on('editor','close',()=>{resetForms();controls();});on('check-form','submit',saveCheck);on('month','change',loadEntry);on('log-form','submit',saveLog);on('date','change',loadLog);
+ on('whatif','input',()=>{clearTimeout(ui.pending);ui.pending=setTimeout(scenario,C.debounce);});on('whatif','change',()=>{clearTimeout(ui.pending);scenario();});
+ window.addEventListener('pagehide',()=>{stopDemo(false);clearTimeout(ui.pending);cancelAI();resetForms();});$('whatif').max=C.months;render();window.runHorizonTests=runTests;if(new URLSearchParams(location.search).get('test')==='1')runTests();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<!-- Hash-authorized bootstrap. Keep its text and source order unchanged. -->
+<script>(()=>{const root=document.currentScript,source=root.previousElementSibling;if(document.scripts[1]!==root||source!==document.scripts[0]||source.type!=="text/horizon")return;const url=URL.createObjectURL(new Blob([source.textContent],{type:"text/javascript"})),script=document.createElement("script");script.src=url;script.onload=script.onerror=()=>URL.revokeObjectURL(url);root.after(script)})();</script>
+<script async crossorigin="anonymous" referrerpolicy="no-referrer" integrity="sha256-LQdTYZ03u0RSdhuHT/xq5kKengUesm9ExayDxzYvx7E=" src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.5/dist/index.global.js"></script>
+</head>
+<body>
+<a class=skip href=#main>Skip to content</a>
+<header class=mast><div class=wrap><div class=row><div class=brand><span class=logo><svg viewBox="0 0 24 24" aria-hidden=true><path d="M3 15h18M7 19h10M6 11a6 6 0 0 1 12 0"/></svg></span>Horizon</div><span class=private>Guest mode. Always your choice.</span></div><div class=tabs role=tablist aria-label="Horizon views"><button id=tab-overview role=tab aria-selected=true aria-controls=overview>Overview</button><button id=tab-daily role=tab aria-selected=false aria-controls=daily tabindex=-1>Daily log</button><button id=tab-clinician role=tab aria-selected=false aria-controls=clinician tabindex=-1>Clinician</button><button id=tab-privacy role=tab aria-selected=false aria-controls=privacy tabindex=-1>Privacy &amp; consent</button></div></div></header>
+<main id=main class=wrap tabindex=-1>
+<noscript><p class=notice>Enable JavaScript to use Horizon. No information is collected without it.</p></noscript>
+<p class=sr id=live role=status></p>
+<section class="card flow" id=tests aria-labelledby=test-title hidden><h2 id=test-title>Horizon self-tests</h2><p id=test-summary role=status></p><ul id=test-results></ul></section>
+<section class="tour notprint" id=tour aria-label="Captioned guided tour" hidden><div class=row><div><small id=tour-step></small><p id=tour-caption role=status></p></div><div class=actions><button class=btn id=tour-pause>Pause</button><button class=btn id=tour-stop>End tour</button></div></div></section>
+<section id=overview role=tabpanel aria-labelledby=tab-overview tabindex=0>
+<header class=intro><div><p class=eyebrow>Your reproductive health, in perspective</p><h1>Your story, over time.</h1><p class=sub>Notice changes. Understand your options. Find your next step.</p></div><div class=actions><button class="btn quiet" id=tour-start><span aria-hidden=true>&#9655;</span> 30-second tour</button><button class="btn primary" id=edit><span aria-hidden=true>+</span> Add a check-in</button></div></header>
+<div class=context><strong id=session-label>Example / synthetic data</strong><span id=source-label>Fictional observations.</span><a id=evidence-link href=#evidence>Not a fertility test &#8599;</a></div>
+<div class=layout><section class="card tilt" id=trend-card aria-labelledby=trend-title><h2 id=trend-title>Your reproductive timeline</h2><p class=small>Observed cycle variation &middot; not a prediction</p><p class=direction id=direction>More variable</p><p class=small id=trend-copy>Cycle timing varied more at the latest check-in.</p>
+<figure class=plot><div class=plot-body><div class=scale id=scale aria-hidden=true></div><svg viewBox="0 0 480 120" preserveAspectRatio=none role=img aria-labelledby="chart-title chart-description"><title id=chart-title>Range between shortest and longest of three recent cycles, in days</title><desc id=chart-description></desc><defs><linearGradient id=wash x2="0" y2="1"><stop stop-opacity=".18"/><stop offset="1" stop-opacity="0"/></linearGradient></defs><path class=guide d="M0 0h480M0 40h480M0 80h480M0 120h480"/><path id="area"/><path class=trace id="trace"/><path class=dots id="dots"/></svg><div class=dates aria-hidden=true><span id=first-month></span><span id=last-month></span></div></div><figcaption class=chart-note>Days of variation, not a measure of fertility.</figcaption></figure>
+<details><summary>Read the chart as a table</summary><div class=table-wrap><table><caption>Observed, not forecast</caption><thead><tr><th scope=col>Check-in</th><th scope=col>Variation</th></tr></thead><tbody id=chart-rows></tbody></table></div></details>
+<div class=scenario id=scenario-box><div class=row><label for=whatif>Look ahead, without a prediction</label><output id=offset for=whatif aria-live=off>Now</output></div><input id=whatif type=range min=0 max=12 value=0 step=1 aria-describedby=scenario-copy><div class=ends aria-hidden=true><span>Now</span><span>+12 months</span></div><p id=scenario-copy role=status></p><p>Assumes continued trying if relevant. Birthday timing is approximate. Not advice to wait.</p></div></section>
+<div class=stack><section class="card tilt" id=coverage-card aria-labelledby=coverage-title><h2 id=coverage-title>A fuller picture</h2><p class=small>How much context is available</p><div class=meter><div class=ring><svg viewBox="0 0 100 100" aria-hidden=true><circle cx="50" cy="50" r="43"/><circle id="arc" cx="50" cy="50" r="43" pathLength="100" stroke-dasharray="90 100"/></svg><div><b id=coverage>90%</b><small>input coverage</small></div></div><div><h3 id=confidence>More context</h3><p>Not fertility, risk or medical confidence.</p></div></div><details><summary>What the ring means</summary><p>Age and comparable observations count twice; other answers once. Inapplicable cycle fields are excluded. Key gaps cap context. These are demo weights.</p></details></section>
+<section class="card tilt flow"><h2>Let's make sense of it</h2><p class=small id=explanation role=status>Explore what changed and what remains uncertain.</p><button class=btn id=explain>Explain my timeline &rarr;</button><p class=small id=ai-mode>Reviewed fallback available.</p></section></div></div>
+<section class=section aria-labelledby=next-title><header class=section-head><p class=eyebrow>Small steps, on your terms</p><h2 id=next-title>More understanding. More options.</h2></header><div class=split><section class="card flow"><h3 id=next-cue>A conversation sooner could help</h3><details><summary>Everyday support</summary><p id=habits></p></details><details><summary>Testing, if useful</summary><p id=testing></p></details><details><summary>Counselling</summary><p>Discuss uncertainty, relationships or donor routes. Your goals come first.</p></details><details><summary>Fertility preservation</summary><p>Ask about egg, sperm or embryo freezing if thinking ahead or facing treatment. Access and benefit vary; no guarantee.</p></details><details open><summary>A clinician or referral</summary><p id=referral></p></details><button class=btn id=plan disabled>Note my intention to ask</button><p class=small id=plan-status role=status></p></section><section class="card flow"><h3>Why this interpretation?</h3><details><summary>Age / not changeable</summary><p>Age informs group guidance, not pregnancy odds. No age is inferred if skipped.</p></details><details><summary>Habits / changeable</summary><p>Habits support wellbeing but cannot reverse reproductive ageing.</p></details><details><summary>Cycle pattern / uncertain</summary><p>Variation cannot confirm ovulation or conception, and may not apply to your context.</p></details><details><summary>Missing context / uncertain</summary><p>Important factors are not measured. Limited context is never a low-risk result.</p></details><button class=btn id=log-today>Make space for today &rarr;</button></section></div></section>
+<div class="section split"><details class=card id=evidence><summary>Evidence and limits</summary><p><strong>Not calibrated or clinically validated.</strong> A steady line can falsely reassure. No diagnosis or pregnancy prediction. Do not delay care based on Horizon.</p><p>Variation cannot measure ovulation, egg supply, sperm, tubes or embryo quality. Hormonal contraception changes patterns. Two days is a demo cutoff, not a clinical threshold.</p><p>ASRM suggests review after 12 months trying under 35, 6 months from 35, sooner over 40 or with known concerns, for regular unprotected intercourse. Other routes differ. Age-context steps are prompts, not biological curves or gender identities.</p><a class=resource href=https://doi.org/10.1016/j.fertnstert.2021.08.038 target=_blank rel="noopener noreferrer">ASRM evaluation guidance &#8599;</a><br><a class=resource href=https://www.asrm.org/practice-guidance/ target=_blank rel="noopener noreferrer">ASRM / AUA guidance &#8599;</a><br><a class=resource href=https://www.cdc.gov/pregnancy/about/index.html target=_blank rel="noopener noreferrer">CDC planning guidance &#8599;</a><p><strong>Equity:</strong> cost, access, disability and care experiences shape options. No assumptions about partners, identity or wanting children. Not validated across populations. Skipped answers are not reassuring answers.</p></details><details class="card cohort"><summary>Earlier action, honestly measured</summary><p>Synthetic groups: people intending to contact a clinician within three months.</p><label>Usual information &middot; 28 of 100<progress max=100 value=28>28 of 100</progress></label><label>Earlier prompt &middot; 46 of 100<progress max=100 value=46>46 of 100</progress></label><p>Invented counts, not evidence that Horizon works. No guest data contributes.</p><p>A consented pilot should measure completed visits, appropriate referrals, anxiety and access gaps. Intention is not completed care.</p><p>Solo-built for Future Health Digital Innovation Challenge: [Fertility] Reproductive Potential.</p></details></div></section>
+<section id=daily role=tabpanel aria-labelledby=tab-daily tabindex=0 hidden><header class=intro><div><p class=eyebrow>A moment for yourself</p><h1>One day at a time.</h1><p class=sub>Wellbeing, not a fertility test.</p></div></header><p class=notice id=daily-source></p><div class="split section"><section class="card flow" id=daily-card><h2>Your last 14 days</h2><ol class=tracker id=tracker aria-label="Fourteen-day reflection history"></ol><p class=small><strong id=streak>3 days together</strong>. Missing a day is okay.</p></section><section class="card flow"><h2>A short reflection</h2><div data-permissions=logs></div><form class=flow id=log-form autocomplete=off novalidate><fieldset id=logs-fields class=fields disabled><legend class=sr>Daily reflection</legend></fieldset><p class=error id=log-error role=alert></p><button class="btn primary" id=save-log disabled>Log this day</button><p class=small id=log-feedback role=status></p></form></section></div></section>
+<section id=clinician role=tabpanel aria-labelledby=tab-clinician tabindex=0 hidden><header class=intro><div><p class=eyebrow>A conversation, together</p><h1>A shared starting point.</h1><p class=sub>Local self-report, not an assessment.</p></div><button class="btn notprint" id=print>Print one-page summary</button></header><section class=card id=clinical-card><h2>Horizon / clinician summary</h2><div class=notprint data-permissions=clinician></div><p class=notice id=clinical-locked>Allow the summary to see your entries. Nothing is sent.</p><div id=clinical-body hidden><dl class=facts id=clinical-facts></dl><p class="small rule">Verify medicines, history, treatments, goals and partner factors. Not calibrated or diagnostic. Not for triage or eligibility.</p><p class="small print-note" hidden>Printed copies are outside Horizon. Keep or dispose of securely.</p></div></section></section>
+<section id=privacy role=tabpanel aria-labelledby=tab-privacy tabindex=0 hidden><header class=intro><div><p class=eyebrow>Your data, your choice</p><h1>You hold the controls.</h1><p class=sub>No login. No backend. No automatic sharing.</p></div></header><div class=split><section class="card flow" id=permissions-card><h2>Granular permissions</h2><p class=small>Turn off a choice to remove its data or output, including the device-saved copy.</p><div data-permissions="profile timeline logs clinician ai"></div></section><div class=stack><section class="card flow"><h2>Keep only what you choose</h2><div data-permissions=save></div><p class=small id=storage-note role=status></p><p class=small>Without local save, entries stay in memory until close or reload. Device storage is unencrypted; others using this browser could read it.</p><div class=actions><button class="btn danger" id=erase-open>Erase everything</button><button class=btn id=example>Return to my session</button></div></section><section class="card flow"><h2>A trusted person, if you want</h2><div data-permissions=buddy></div><p class=small>Always: "Hi, could we find a time to catch up? I'd appreciate your support."</p><a class=btn id=support target=_blank rel="noopener noreferrer" hidden>Open WhatsApp &#8599;</a><p class=small id=support-hint>Enable support to open a neutral message.</p><p class=small>No health details or Horizon name. You choose the person and press send. Never automatic. WhatsApp receives the text when opened, under its own privacy policy.</p></section></div></div><p class="notice section"><strong>Never for insurance, employment, credit or advertising.</strong> No ranking, eligibility decisions or sale of data. A CDN styling asset receives no health entries.</p></section>
+<footer><div class=row><span>Horizon &middot; Perspective, not a prediction.</span><span>Future Health Digital Innovation Challenge &middot; Solo entry</span></div></footer>
+</main>
+<dialog id=editor aria-labelledby=editor-title><form id=check-form class=flow autocomplete=off novalidate><header class=row><div><h2 id=editor-title tabindex=-1>A check-in, on your terms.</h2><p class=small>Optional answers. Context is not gender identity.</p></div><button class=btn id=editor-close type=button>Close</button></header><div data-permissions=profile></div><fieldset id=profile-fields class=fields disabled><legend class=sr>Planning answers</legend></fieldset><div class=rule data-permissions=timeline></div><fieldset id=timeline-fields class=fields disabled><legend class=sr>Cycle check-in</legend></fieldset><p class=small>Count from one period start to the next. Both lengths are optional. A blank month clears it. Numbers are clamped to stated ranges.</p><p class=error id=form-error role=alert></p><button class="btn primary" id=save-check disabled>Use this check-in</button></form></dialog>
+<dialog id=erase-dialog aria-labelledby=erase-title><div class=flow><h2 id=erase-title>A clean slate?</h2><p class=small>Remove entries, device save, grants and intention note. Printed copies and messages you sent cannot be removed.</p><div class=actions><button class=btn id=erase-cancel autofocus>Keep my session</button><button class="btn danger" id=erase-confirm>Erase everything</button></div></div></dialog>
+</body>
+</html>
